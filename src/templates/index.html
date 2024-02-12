@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Fraud Detection</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+<div class="Login">
+    <h1>ENTER ONLY THE REQUIRED DATA</h1>
+    <h2>ALL DATA SHOULD BE A NUMBER</h2>
+    <h3>This api is only a newby model so no error handling has been done.</h3>
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="number" name="V4" placeholder="V4" step="any" required="required" />
+        <input type="number" name="V10" placeholder="V10" step="any" required="required" />
+        <input type="number" name="V11" placeholder="V11" step="any" required="required" />
+        <input type="number" name="V12" placeholder="V12" step="any" required="required" />
+        <input type="number" name="V14" placeholder="V14" step="any" required="required" />
+        <input type="number" name="V16" placeholder="V16" step="any" required="required" />
+        <input type="number" name="V17" placeholder="V17" step="any" required="required" />
+        <input type="number" name="Amount" placeholder="Amount" step="any" required="required" />
+
+        <button type="submit" class="btn btn-primary">Predict</button>
+
+    </form>
+
+    <br>
+    <br>
+    <h2>{{ prediction_text }}</h2>
+</div>
+</body>
+</html>
